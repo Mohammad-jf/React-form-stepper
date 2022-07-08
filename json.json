@@ -1,0 +1,668 @@
+[
+    {
+        "StepNo": 1,
+        "Title": "تاریخ",
+        "IconClassName": "",
+        "IsNeedsValidation": false,
+        "Description": "",
+        "Inputs": [
+            {
+                "Id": 12043,
+                "Type": 2,
+                "Label": "تاریخ شروع بیمه نامه جدید",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": false,
+                "IsVisibility": true,
+                "MaxValue": "30",
+                "MinValue": "0",
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "0",
+                "ReadOnly": false,
+                "Options": null,
+                "OptionsDependency": null,
+                "DispalyDependency": null
+            },
+            {
+                "Id": 12044,
+                "Type": 1,
+                "Label": "مدت اعتبار",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": true,
+                "IsVisibility": true,
+                "MaxValue": null,
+                "MinValue": null,
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": [
+                    {
+                        "Key": 2,
+                        "Value": "یکساله",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    }
+                ],
+                "OptionsDependency": [],
+                "DispalyDependency": []
+            }
+        ]
+    },
+    {
+        "StepNo": 2,
+        "Title": "اطلاعات وسیله نقلیه",
+        "IconClassName": "",
+        "IsNeedsValidation": false,
+        "Description": "",
+        "Inputs": [
+            {
+                "Id": 12046,
+                "Type": 1,
+                "Label": "نوع وسیله نقلیه",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": false,
+                "IsVisibility": true,
+                "MaxValue": null,
+                "MinValue": null,
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": [
+                    {
+                        "Key": 1,
+                        "Value": "سواری",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 2,
+                        "Value": "اتوکار",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 3,
+                        "Value": "بارکش",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 4,
+                        "Value": "موتور سيکلت",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 5,
+                        "Value": "ماشين آلات كشاورزی-راه سازی و ساختمانی",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 6,
+                        "Value": "یدک",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    }
+                ],
+                "OptionsDependency": [
+                    {
+                        "InputId": 12045,
+                        "InputLabel": "نوع خودرو",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12046,
+                                "InputLabel": "نوع وسیله نقلیه"
+                            }
+                        ]
+                    },
+                    {
+                        "InputId": 12047,
+                        "InputLabel": "مورد استفاده",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12046,
+                                "InputLabel": "نوع وسیله نقلیه"
+                            }
+                        ]
+                    }
+                ],
+                "DispalyDependency": []
+            },
+            {
+                "Id": 12045,
+                "Type": 1,
+                "Label": "نوع خودرو",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": true,
+                "IsVisibility": true,
+                "MaxValue": null,
+                "MinValue": null,
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": [],
+                "OptionsDependency": [],
+                "DispalyDependency": []
+            },
+            {
+                "Id": 12047,
+                "Type": 1,
+                "Label": "مورد استفاده",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": true,
+                "IsVisibility": true,
+                "MaxValue": null,
+                "MinValue": null,
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": [],
+                "OptionsDependency": [],
+                "DispalyDependency": []
+            },
+            {
+                "Id": 12048,
+                "Type": 4,
+                "Label": "سال ساخت",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": true,
+                "IsVisibility": true,
+                "MaxValue": "2022",
+                "MinValue": "1300",
+                "MaxLength": 4,
+                "FullWidth": false,
+                "DefaultValue": "1401",
+                "ReadOnly": false,
+                "Options": null,
+                "OptionsDependency": null,
+                "DispalyDependency": null
+            }
+        ]
+    },
+    {
+        "StepNo": 3,
+        "Title": "اطلاعات بیمه نامه قبل",
+        "IconClassName": "",
+        "IsNeedsValidation": false,
+        "Description": "",
+        "Inputs": [
+            {
+                "Id": 12049,
+                "Type": 1,
+                "Label": "شرکت بیمه سال قبل",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": true,
+                "IsVisibility": true,
+                "MaxValue": null,
+                "MinValue": null,
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": [
+                    {
+                        "Key": 1,
+                        "Value": "ندارد",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 2,
+                        "Value": "ایران",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": [
+                            {
+                                "InputId": 12051,
+                                "InputLabel": "تاریخ شروع بیمه نامه قبل"
+                            },
+                            {
+                                "InputId": 12052,
+                                "InputLabel": "تاریخ پایان بیمه نامه قبل"
+                            },
+                            {
+                                "InputId": 12053,
+                                "InputLabel": "درصد تخفیف بیمه نامه"
+                            },
+                            {
+                                "InputId": 12054,
+                                "InputLabel": "درصد تخفیف حوادث راننده"
+                            },
+                            {
+                                "InputId": 12055,
+                                "InputLabel": "آیا از بیمه نامه قبلی خود خسارت گرفته اید"
+                            },
+                            {
+                                "InputId": 12059,
+                                "InputLabel": "تغییر پلاک دارم"
+                            }
+                        ]
+                    },
+                    {
+                        "Key": 3,
+                        "Value": "البرز",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    }
+                ],
+                "OptionsDependency": [],
+                "DispalyDependency": [
+                    {
+                        "InputId": 12050,
+                        "InputLabel": "علت نداشتن بیمه نامه سال قبل",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12049,
+                                "InputLabel": "شرکت بیمه سال قبل"
+                            }
+                        ]
+                    },
+                    {
+                        "InputId": 12051,
+                        "InputLabel": "تاریخ شروع بیمه نامه قبل",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12049,
+                                "InputLabel": "شرکت بیمه سال قبل"
+                            }
+                        ]
+                    },
+                    {
+                        "InputId": 12052,
+                        "InputLabel": "تاریخ پایان بیمه نامه قبل",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12049,
+                                "InputLabel": "شرکت بیمه سال قبل"
+                            }
+                        ]
+                    },
+                    {
+                        "InputId": 12053,
+                        "InputLabel": "درصد تخفیف بیمه نامه",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12049,
+                                "InputLabel": "شرکت بیمه سال قبل"
+                            }
+                        ]
+                    },
+                    {
+                        "InputId": 12054,
+                        "InputLabel": "درصد تخفیف حوادث راننده",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12049,
+                                "InputLabel": "شرکت بیمه سال قبل"
+                            }
+                        ]
+                    },
+                    {
+                        "InputId": 12055,
+                        "InputLabel": "آیا از بیمه نامه قبلی خود خسارت گرفته اید",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12049,
+                                "InputLabel": "شرکت بیمه سال قبل"
+                            }
+                        ]
+                    },
+                    {
+                        "InputId": 12059,
+                        "InputLabel": "تغییر پلاک دارم",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12049,
+                                "InputLabel": "شرکت بیمه سال قبل"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": 12051,
+                "Type": 2,
+                "Label": "تاریخ شروع بیمه نامه قبل",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": true,
+                "IsVisibility": false,
+                "MaxValue": "",
+                "MinValue": "",
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": null,
+                "OptionsDependency": null,
+                "DispalyDependency": null
+            },
+            {
+                "Id": 12052,
+                "Type": 2,
+                "Label": "تاریخ پایان بیمه نامه قبل",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": true,
+                "IsVisibility": false,
+                "MaxValue": "",
+                "MinValue": "",
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": null,
+                "OptionsDependency": null,
+                "DispalyDependency": null
+            },
+            {
+                "Id": 12059,
+                "Type": 1,
+                "Label": "تغییر پلاک دارم",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": false,
+                "IsVisibility": false,
+                "MaxValue": null,
+                "MinValue": null,
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": [
+                    {
+                        "Key": 1,
+                        "Value": "تغییر پلاک نداشته ام",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 2,
+                        "Value": "تغییر پلاک داشته ام",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    }
+                ],
+                "OptionsDependency": [
+                    {
+                        "InputId": 12053,
+                        "InputLabel": "درصد تخفیف بیمه نامه",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12059,
+                                "InputLabel": "تغییر پلاک دارم"
+                            }
+                        ]
+                    },
+                    {
+                        "InputId": 12054,
+                        "InputLabel": "درصد تخفیف حوادث راننده",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12059,
+                                "InputLabel": "تغییر پلاک دارم"
+                            }
+                        ]
+                    }
+                ],
+                "DispalyDependency": []
+            },
+            {
+                "Id": 12053,
+                "Type": 1,
+                "Label": "درصد تخفیف بیمه نامه",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": true,
+                "IsVisibility": false,
+                "MaxValue": null,
+                "MinValue": null,
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": [],
+                "OptionsDependency": [],
+                "DispalyDependency": []
+            },
+            {
+                "Id": 12054,
+                "Type": 1,
+                "Label": "درصد تخفیف حوادث راننده",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": true,
+                "IsVisibility": false,
+                "MaxValue": null,
+                "MinValue": null,
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": [],
+                "OptionsDependency": [],
+                "DispalyDependency": []
+            },
+            {
+                "Id": 12055,
+                "Type": 1,
+                "Label": "آیا از بیمه نامه قبلی خود خسارت گرفته اید",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": true,
+                "IsVisibility": false,
+                "MaxValue": null,
+                "MinValue": null,
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": [
+                    {
+                        "Key": 1,
+                        "Value": "خیر",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 2,
+                        "Value": "بله",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": [
+                            {
+                                "InputId": 12056,
+                                "InputLabel": "تعداد خسارت مالی"
+                            },
+                            {
+                                "InputId": 12057,
+                                "InputLabel": "تعداد خسارت جانی"
+                            },
+                            {
+                                "InputId": 12058,
+                                "InputLabel": "تعداد خسارت حوادث راننده"
+                            }
+                        ]
+                    }
+                ],
+                "OptionsDependency": [],
+                "DispalyDependency": [
+                    {
+                        "InputId": 12056,
+                        "InputLabel": "تعداد خسارت مالی",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12055,
+                                "InputLabel": "آیا از بیمه نامه قبلی خود خسارت گرفته اید"
+                            }
+                        ]
+                    },
+                    {
+                        "InputId": 12057,
+                        "InputLabel": "تعداد خسارت جانی",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12055,
+                                "InputLabel": "آیا از بیمه نامه قبلی خود خسارت گرفته اید"
+                            }
+                        ]
+                    },
+                    {
+                        "InputId": 12058,
+                        "InputLabel": "تعداد خسارت حوادث راننده",
+                        "ParentInputs": [
+                            {
+                                "InputId": 12055,
+                                "InputLabel": "آیا از بیمه نامه قبلی خود خسارت گرفته اید"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": 12056,
+                "Type": 1,
+                "Label": "تعداد خسارت مالی",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": true,
+                "IsVisibility": false,
+                "MaxValue": null,
+                "MinValue": null,
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": [
+                    {
+                        "Key": 1,
+                        "Value": "ندارم",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 2,
+                        "Value": "یکبار خسارت مالی",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 3,
+                        "Value": "دوبار خسارت مالی",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    }
+                ],
+                "OptionsDependency": [],
+                "DispalyDependency": []
+            },
+            {
+                "Id": 12057,
+                "Type": 1,
+                "Label": "تعداد خسارت جانی",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": true,
+                "IsVisibility": false,
+                "MaxValue": null,
+                "MinValue": null,
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": [
+                    {
+                        "Key": 1,
+                        "Value": "ندارم",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 2,
+                        "Value": "یکبار خسارت جانی",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 3,
+                        "Value": "دوبار خسارت جانی",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    }
+                ],
+                "OptionsDependency": [],
+                "DispalyDependency": []
+            },
+            {
+                "Id": 12058,
+                "Type": 1,
+                "Label": "تعداد خسارت حوادث راننده",
+                "Tooltip": "",
+                "MultiSelect": false,
+                "IsRequired": true,
+                "IsVisibility": false,
+                "MaxValue": null,
+                "MinValue": null,
+                "MaxLength": null,
+                "FullWidth": false,
+                "DefaultValue": "",
+                "ReadOnly": false,
+                "Options": [
+                    {
+                        "Key": 1,
+                        "Value": "ندارم",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 2,
+                        "Value": "یکبار خسارت حوادث راننده",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    },
+                    {
+                        "Key": 3,
+                        "Value": "دوبار خسارت حوادث راننده",
+                        "IconClassName": null,
+                        "AlertText": "",
+                        "DisplayCondition": null
+                    }
+                ],
+                "OptionsDependency": [],
+                "DispalyDependency": []
+            }
+        ]
+    }
+]
