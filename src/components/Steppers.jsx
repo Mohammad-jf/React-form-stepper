@@ -28,18 +28,24 @@ const Steppers = () => {
 
     return (
         <Box sx={{ width: '100%', }} mt='40px'>
+
+            {/* steppers */}
             <Stepper activeStep={activeStep}>
                 {steps.map((step) => (
-                    <Step>
+                    <Step key={step.StepNo}>
                         <StepLabel>{step.Title}</StepLabel>
                     </Step>
                 ))}
             </Stepper>
 
+
+            {/* rendering Inputs */}
             <Box>
                 <StepInputs stepData={steps[activeStep]} />
             </Box>
 
+
+            {/* buttons */}
             <Box sx={{ display: 'flex', flexDirection: 'row', pt: 5 }} justifyContent='center'>
                 <Button
                     color="inherit"

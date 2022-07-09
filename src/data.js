@@ -52,7 +52,7 @@ const data = () => {
           DispalyDependency: [],
         },
       ],
-    },  
+    },
     {
       StepNo: 2,
       Title: "اطلاعات وسیله نقلیه",
@@ -126,7 +126,7 @@ const data = () => {
                 {
                   InputId: 12046,
                   InputLabel: "نوع وسیله نقلیه",
-                },
+                }
               ],
             },
             {

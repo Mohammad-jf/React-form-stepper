@@ -23,7 +23,7 @@ const StepInputs = ({ stepData }) => {
         <Box sx={{ width: '100%', alignItems: "center" }}>
 
             {stepData.Inputs.map((Input) => (
-                <Stack mt='20px'>
+                <Stack mt='20px' key={Input.Id}>
                     {renderInput(Input)}
                 </Stack>
             ))}

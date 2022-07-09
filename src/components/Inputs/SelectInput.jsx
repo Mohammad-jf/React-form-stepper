@@ -1,17 +1,28 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { useEffect, useState } from 'react';
+import { fetchData,convertDataFormat } from '../utils/fetchData.';
 
 
-const SelectInput = ({ InputData }) => {
-  const [value, setvalue] = React.useState('');
+const SelectInput = ({ InputData, stepData }) => {
+  const [optionValue, setOptionValue] = useState('');
+  const handleChange = (e) => setOptionValue(e.target.value);
 
-  const handleChange = (event) => {
-    setvalue(event.target.value);
-  };
+
+  useEffect(() => {
+    InputData.Options.forEach((option) => {
+      if (optionValue === option.Value) {
+        if (InputData.OptionsDependency !== '') {
+          InputData.OptionsDependency?.map((optionDep) =>
+            fetchData(convertDataFormat(optionDep,option.Key))
+          )
+        }
+      }
+    })
+  }, [optionValue])
 
 
 
@@ -22,11 +33,13 @@ const SelectInput = ({ InputData }) => {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={value}
+          value={optionValue}
           label={InputData.Label}
           onChange={handleChange}
         >
-          {InputData.Options?.map((option) => <MenuItem value={option.Value}>{option.Value}</MenuItem>)}
+          {InputData.Options?.map((option) =>
+            <MenuItem key={option.Key} value={option.Value}>{option.Value}</MenuItem>
+          )}
         </Select>
       </FormControl>
     </Box>
