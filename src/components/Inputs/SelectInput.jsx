@@ -4,7 +4,8 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useEffect, useState } from 'react';
-import { fetchData,convertDataFormat } from '../utils/fetchData.';
+import { fetchData,convertDataFormat} from '../../utils/fetchData.';
+
 
 
 const SelectInput = ({ InputData, stepData }) => {
