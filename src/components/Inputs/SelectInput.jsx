@@ -4,26 +4,55 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useEffect, useState } from 'react';
-import { fetchData,convertDataFormat} from '../../utils/fetchData.';
-
+import { fetchData, convertDataFormat } from '../../utils/fetchData.';
 
 
 const SelectInput = ({ InputData, stepData }) => {
+  // states
   const [optionValue, setOptionValue] = useState('');
+
+  // handelers
   const handleChange = (e) => setOptionValue(e.target.value);
 
 
   useEffect(() => {
     InputData.Options.forEach((option) => {
-      if (optionValue === option.Value) {
-        if (InputData.OptionsDependency !== '') {
-          InputData.OptionsDependency?.map((optionDep) =>
-            fetchData(convertDataFormat(optionDep,option.Key))
-          )
-        }
+      if (optionValue === option.Value && InputData.OptionsDependency !== '') {
+        InputData.OptionsDependency.map((optionDep) => getData(optionDep, option.Key))
       }
-    })
-  }, [optionValue])
+    });
+  }, [optionValue]);
+
+
+  async function getData(optionDep, optionKey) {
+    const changeFormat = convertDataFormat(optionDep, optionKey);
+    const fetchedData = await fetchData(changeFormat)
+
+    if (fetchedData.messageItems[0].data.Options.length !== 0) {
+      localStorage.setItem("options", JSON.stringify(fetchedData.messageItems[0].data))
+    } else {
+      localStorage.clear();
+    }
+  }
+
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
+
+
+
+  function renderItems() {
+    const lsData = localStorage.getItem('options');
+    const data = JSON.parse(lsData);
+
+    if (InputData.Options && InputData.Options.length !== 0) {
+      return InputData.Options.map((option) => <MenuItem key={option.Key} value={option.Value}>{option.Value}</MenuItem>)
+    }
+    else if (data) {
+      const options = data.Options.splice(0, 99);
+      return options.map((option) => <MenuItem key={option.Key} value={option.Value}>{option.Value}</MenuItem>)
+    }
+  }
 
 
 
@@ -38,9 +67,7 @@ const SelectInput = ({ InputData, stepData }) => {
           label={InputData.Label}
           onChange={handleChange}
         >
-          {InputData.Options?.map((option) =>
-            <MenuItem key={option.Key} value={option.Value}>{option.Value}</MenuItem>
-          )}
+          {renderItems()}
         </Select>
       </FormControl>
     </Box>

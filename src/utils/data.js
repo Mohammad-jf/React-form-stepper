@@ -120,11 +120,11 @@ const data = () => {
           ],
           OptionsDependency: [
             {
-              InputId: 12045,
+              InputId: 13095,
               InputLabel: "نوع خودرو",
               ParentInputs: [
                 {
-                  InputId: 12046,
+                  InputId: 13094,
                   InputLabel: "نوع وسیله نقلیه",
                 }
               ],
@@ -134,7 +134,7 @@ const data = () => {
               InputLabel: "مورد استفاده",
               ParentInputs: [
                 {
-                  InputId: 12046,
+                  InputId: 13094,
                   InputLabel: "نوع وسیله نقلیه",
                 },
               ],
@@ -143,7 +143,7 @@ const data = () => {
           DispalyDependency: [],
         },
         {
-          Id: 12045,
+          Id: 13095,
           Type: 1,
           Label: "نوع خودرو",
           Tooltip: "",
