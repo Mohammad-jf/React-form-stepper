@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import { Stack } from '@mui/material';
 import DatePikerInput from './Inputs/DatePikerInput';
@@ -7,13 +7,15 @@ import NumberInput from './Inputs/NumberInput';
 
 
 
+
 const StepInputs = ({ stepData }) => {
+    const [dependencyData, setDependencyData] = useState('');
 
     //choose input base on type
     const renderInput = (Input) => {
         switch (Input.Type) {
             case 2: return <DatePikerInput InputData={Input} />
-            case 1: return <SelectInput InputData={Input} />
+            case 1: return <SelectInput InputData={Input} setDependencyData={setDependencyData} dependencyData={dependencyData} />
             case 4: return <NumberInput InputData={Input} />
             default:
         }

@@ -7,14 +7,15 @@ import { useEffect, useState } from 'react';
 import { fetchData, convertDataFormat } from '../../utils/fetchData.';
 
 
-const SelectInput = ({ InputData, stepData }) => {
+
+
+const SelectInput = ({ InputData, dependencyData, setDependencyData }) => {
   // states
   const [optionValue, setOptionValue] = useState('');
 
-  // handelers
-  const handleChange = (e) => setOptionValue(e.target.value);
 
 
+  //  get the option key and send a request 
   useEffect(() => {
     InputData.Options.forEach((option) => {
       if (optionValue === option.Value && InputData.OptionsDependency !== '') {
@@ -24,33 +25,30 @@ const SelectInput = ({ InputData, stepData }) => {
   }, [optionValue]);
 
 
+
+
+  // get option dependency data
   async function getData(optionDep, optionKey) {
     const changeFormat = convertDataFormat(optionDep, optionKey);
     const fetchedData = await fetchData(changeFormat)
 
     if (fetchedData.messageItems[0].data.Options.length !== 0) {
-      localStorage.setItem("options", JSON.stringify(fetchedData.messageItems[0].data))
+      setDependencyData(fetchedData.messageItems[0].data);
     } else {
-      localStorage.clear();
+      setDependencyData('');
     }
   }
 
-  useEffect(() => {
-    localStorage.clear();
-  }, []);
 
-
-
-  function renderItems() {
-    const lsData = localStorage.getItem('options');
-    const data = JSON.parse(lsData);
+  // render items
+  const renderItems = () => {
 
     if (InputData.Options && InputData.Options.length !== 0) {
       return InputData.Options.map((option) => <MenuItem key={option.Key} value={option.Value}>{option.Value}</MenuItem>)
-    }
-    else if (data) {
-      const options = data.Options.splice(0, 99);
-      return options.map((option) => <MenuItem key={option.Key} value={option.Value}>{option.Value}</MenuItem>)
+
+    } else if (dependencyData !== '' && InputData.Id === dependencyData.Id) {
+      return dependencyData.Options.map((option) => <MenuItem key={option.Key} value={option.Value}>{option.Value}</MenuItem>)
+
     }
   }
 
@@ -65,9 +63,10 @@ const SelectInput = ({ InputData, stepData }) => {
           id="demo-simple-select"
           value={optionValue}
           label={InputData.Label}
-          onChange={handleChange}
+          onChange={(e) => setOptionValue(e.target.value)}
         >
           {renderItems()}
+
         </Select>
       </FormControl>
     </Box>
